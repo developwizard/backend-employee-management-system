@@ -11,4 +11,12 @@ public interface EmployeeService {
      * @return Employee list
      */
     List<Employee> getAllEmployees();
+
+    /**
+     * Save employee into DB
+     *
+     * @param employee Employee
+     * @return Saved Employee
+     */
+    Employee saveEmployee(Employee employee);
 }

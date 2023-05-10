@@ -1,6 +1,7 @@
 package com.developwizard.backendemployeemanagementsystem.service.impl;
 
 import com.developwizard.backendemployeemanagementsystem.entity.Employee;
+import com.developwizard.backendemployeemanagementsystem.exception.ResourceNotFoundException;
 import com.developwizard.backendemployeemanagementsystem.repository.EmployeeRepository;
 import com.developwizard.backendemployeemanagementsystem.service.EmployeeService;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee saveEmployee(Employee employee) {
         return employeeRepository.save(employee);
+    }
+
+    @Override
+    public Employee findEmployeeById(Long id) {
+        return employeeRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Employee", "ID", id));
     }
 }

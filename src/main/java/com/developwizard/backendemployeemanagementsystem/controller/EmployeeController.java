@@ -35,4 +35,15 @@ public class EmployeeController {
     public Employee createEmployee(@RequestBody Employee employee) {
         return employeeService.saveEmployee(employee);
     }
+
+    /**
+     * Find employee by id
+     *
+     * @param id Employee ID
+     * @return Employee
+     */
+    @GetMapping("{id}")
+    public Employee findEmployeeById(@PathVariable Long id) {
+        return employeeService.findEmployeeById(id);
+    }
 }

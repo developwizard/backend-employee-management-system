@@ -19,4 +19,12 @@ public interface EmployeeService {
      * @return Saved Employee
      */
     Employee saveEmployee(Employee employee);
+
+    /**
+     * Retrieve employee by ID from DB
+     *
+     * @param id Employee ID
+     * @return Employee
+     */
+    Employee findEmployeeById(Long id);
 }
